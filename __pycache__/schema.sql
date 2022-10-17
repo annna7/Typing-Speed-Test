@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS entries;
+
+CREATE TABLE users (
+    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL,
+    pass TEXT NOT NULL
+);
+
+CREATE TABLE entries (
+    entry_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id FOREIGN KEY REFERENCES users(user_id),
+    wpm INTEGER NOT NULL,
+    accuracy INTEGER NOT NULL,
+    entry_date DATE NOT NULL
+);

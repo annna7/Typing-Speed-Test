@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Typing Test
+{% endblock %}
+
+{% block main %}
+<script type = "text/javascript" src="{{url_for('static', filename='textbox.js')}}"></script>
+<div class="background-image page-holder bg-cover bg-white px-2 py-1 rounded">
+<body>
+  <div class="container mare quantico dur">
+    <div class="textbox">
+      <div id="textboxtext">
+    {% for word in word_list %}
+    <span>{{ word }}</span>
+    {% endfor %}
+    </div>
+    </div>
+      <input autocomplete="off" autofocus type="text" name="writebox" id="writebox" placeholder="Start typing here"></input>
+      <p id="timer">01:00</p>
+      <div class="instructions">
+        <p id ="results"></p>
+        <p id = "results2">
+          <span id="wps1"></span>
+          <span id="wps2">Type as many words as you can in 60 seconds! Challenge yourself to beat your highscores and improve your typing speed!</span>
+        </p>
+        <p id="results3">
+          <span id="acc1"></span>
+          <span id="acc2"></span>
+        </p>
+        <p id = "results4">
+          <span id="corr1"></span>
+          <span id="corr2"></span>
+        </p>
+        <p id = "results5">
+          <span id="wr1"></span>
+          <span id="wr2"></span>
+        </p>
+        <!---
+        <p id = "results3">
+          <span id="acc1"></span>
+          <span id="acc2">You have 60 seconds to type as many words as you can.</span>
+          </p>
+        <p id = "results4">
+          <span id="corr1"></span>
+          <span id="corr2">The timer will start automatically once you start typing.</span>
+        </p>
+        <p id = "results5">
+          <span id="wr1"></span>
+          <span id="wr2">Good luck!</span></p>
+        -->
+      </div>
+  </div>
+</div>
+    </p>
+  </div>
+</div>
+</body>
+{% endblock %}
